@@ -1,0 +1,115 @@
+body {
+	background-color: rgb(249,250,254);
+	display: flex;
+	justify-content: center;
+	font-family: Plus Jakarta Sans;
+}
+
+p, .privateMessageText {
+	color: rgb(88, 91, 100);
+	font-weight: 500;
+}
+
+.NotificationsBox {
+	background-color: white;
+	border-radius: 16px;
+	width: clamp(500px, 80vw, 1440px);
+	box-shadow: 0 0 12px rgb(0,0,0,0.1);
+}
+
+#NumberOfUnreadNotifications {
+	background-color: rgb(10, 50, 120);
+	border-radius: 8px;
+	color: white;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+.NotificationsHeader {
+	position: relative;
+	padding: 8px;
+}
+
+.MarkAllAsRead {
+	/* TODO: there must be a more elegant way of positioning this than the below */
+	position: absolute;
+	top: 50%;
+	right: 12px;
+	transform: translate(0, -50%);
+	cursor: pointer;
+}
+
+.Notification {
+	
+	margin: 6px;
+	padding: 6px;
+	border-radius: 12px;
+	transition: background-color 250ms;
+}
+
+.Notification[data-status="unread"] {
+	background-color: rgb(246,250,253);
+}
+
+.Notification[data-status="read"] {
+	background-color: white;
+}
+
+.Notification[data-status="read"] .unreadDot {
+	opacity: 0;
+	width: 0;
+}
+
+.NotificationContent {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 1%;
+}
+
+.Name {
+	font-weight: 800;
+	color: black;
+}
+
+.Name:hover, .PostName:hover, .MarkAllAsRead:hover, .GroupName:hover {
+	color: rgb(21, 51, 101);
+	cursor: pointer;
+}
+
+.bonusImage:hover {
+	cursor: pointer;
+}
+
+.PostName {
+	font-weight: 800;
+}
+
+.GroupName {
+	font-weight: 800;
+	color: rgb(21, 51, 101);
+}
+
+.unreadDot {
+	background-color: rgb(255, 83, 74);
+	width: 12px;
+	aspect-ratio: 1;
+	display: inline-block;
+	border-radius: 6px;
+	margin-left: 6px;
+	transition: opacity 250ms, width 250ms;
+	vertical-align: middle;
+}
+
+.privateMessageText {
+	border-color:rgb(226,230,229);
+	border-width: 1px;
+	border-style:solid;
+	border-radius: 6px;
+	color: rgb(106,113,121);
+	max-width: 60%;
+}
+
+.privateMessageText:hover {
+	cursor:pointer;
+	background-color: rgb(229,239,249);
+}
